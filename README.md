@@ -1,1 +1,1 @@
-# jfrog-container-build-push-action
+# JFrog Container Build Push Action

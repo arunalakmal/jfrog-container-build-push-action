@@ -1,0 +1,23 @@
+name: "JFrog Container Image Building and Pushing Action"
+description: "Building container image and pushing to the artifactory"
+inputs:
+  jfrog-url:
+    description: "JFrog instance URL"
+    required: true
+  jfrog-user:
+    description: "JFrog user account"
+    required: true
+  jfrog-token: 
+    description: "JFrog access token"
+    required: true
+  jfrog-repo:
+    description: "JFrog container repository"
+    required: true
+  jfrog-image:
+    description: "JFrog container image name"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: execute_action.sh ${{ inputs.jfrog-url }} ${{ inputs.jfrog-user }} ${{ inputs.jfrog-token }} ${{ inputs.jfrog-repo }} ${{ inputs.jfrog-image }}
+      shell: bash
