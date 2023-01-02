@@ -19,5 +19,7 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
     - run: execute_action.sh ${{ inputs.jfrog-url }} ${{ inputs.jfrog-user }} ${{ inputs.jfrog-token }} ${{ inputs.jfrog-repo }} ${{ inputs.jfrog-image }}
       shell: bash
