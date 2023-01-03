@@ -4,6 +4,8 @@ This is a Composite GitHub Action to login, build and push docker/container imag
 
 This was created to use with the self hosted runners implemented through an Operator and all runner instances contains the `docker/podman` binaries. Because of that this action doesn't install the docker binaries in this usecase. 
 
+This action also `tags` based on the Git commit SHA. If custom tag is required action should be modified.
+
 ## Usage
 
 Please refer the action as below in the GitHub Action
